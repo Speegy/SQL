@@ -24,9 +24,12 @@ product_id int NOT NULL,
 customer_id int NOT NULL, 
 datestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
 quantity int NOT NULL DEFAULT 0,
-FOREIGN KEY (customer_id) REFERENCES customers(id), 
+FOREIGN KEY (customer_id) REFERENCES customer(id), 
 FOREIGN KEY (product_id) REFERENCES products(id)
 );
 
 SHOW DATABASES;
-describe game_store;
+use game_store;
+describe customer;
+describe products;
+describe orders;
