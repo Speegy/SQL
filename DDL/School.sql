@@ -49,7 +49,9 @@ select * from students;
 select * from enrollment;
 select * from classes;
 
-select s.*, c.* from enrollment e join students s on (e.student_id=s.id) join classes c on (e.class_id=c.id);
+select s.*, c.* from enrollment e 
+join students s on (e.student_id=s.id) 
+join classes c on (e.class_id=c.id);
 
 
 

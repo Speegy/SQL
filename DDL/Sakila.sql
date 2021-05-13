@@ -47078,6 +47078,7 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 
+use sakila;
 -- 1) Find the surname of the actor with the forename 'John'.
 select * from actor;
 select last_name from actor where first_name = "John";
@@ -47108,7 +47109,18 @@ select * from film where special_features like "%Deleted Scenes%";
 select * from film_list where category like "%Horror%";
 
 
+-- BONUS QUESTIONS --
+-- 1) List the name of every language in reverse-alphabetical order. (HINT: use 'ORDER BY' and 'SELECT DISTINCT')
+show tables;
+select distinct name from language order by language.name desc;
 
+-- 2) List the full names of every actor whose surname ends with '-son' in alphabetical order by their forename (HINT: use %son%)
+select * from actor where last_name like "%son%" order by last_name asc;
+
+-- 3) Using HAVING COUNT, reverse-alphabetically list the last names that are not repeated.
+select last_name from actor group by last_name having count(*)=1 order by last_name desc;
+
+-- 4) Which actor has appeared in the most films? (HINT: use joins, COUNT() and GROUP BY)
 
 
 
