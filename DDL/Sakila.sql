@@ -47102,11 +47102,11 @@ select * from film where rating != "R";
 select * from film order by length asc limit 10;
 
 -- 8) Find all movies that have deleted scenes.
--- film, film_actor, film_category, film_list, film_text, inventory;
-describe film;
-show tables from sakila;
+select * from film where special_features like "%Deleted Scenes%";
 
 -- 9) Find the titles of all the horror movies. 
+select * from film_list where category like "%Horror%";
+
 
 
 
